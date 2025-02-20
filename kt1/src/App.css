@@ -1,0 +1,170 @@
+
+body{
+	margin:0%;
+}
+ul{
+	list-style-type:  none;
+}
+
+.title{
+	font-size: 48px;
+}
+.paragraph_indentation{
+	margin-bottom: 40px;
+}
+.paragraph{
+	font-size: 24px;
+}
+
+.scene_1 {
+	width: 100%;
+	height: 840px;
+	background: #F4F9E2;
+}
+
+.oval{
+	width: 150px;
+	height: 50px;
+	border-top-left-radius: 25px 25px;
+	border-top-right-radius: 25px 25px;
+	border-bottom-right-radius: 25px 25px;
+	border-bottom-left-radius: 25px 25px;
+	top:40px;
+	right:20px;
+	position:absolute;
+	background-color: #F9B640;
+	text-align: center;
+}
+.logo{
+	width: 118px;
+	height: 118px;
+	top:40px;
+	left:20px;
+	position:absolute;
+}
+
+.placing_blocks_2{
+	display: grid;
+	grid-template-columns: 550px 550px;
+	grid-template-rows: 200px 200px;
+	top:150px;
+	right:16%;
+	position:absolute;
+}
+.block_location_2{
+	display: grid;
+	grid-row-srart: 2;
+	grid-row-end: 2;
+}
+.dinosaur_place{
+	width: 543px;
+	height: 533px;
+}
+
+.block_text{
+	width: 50px;
+	height: 30px;
+	text-align: center;
+}
+.block_location{
+	display: grid;
+	grid-row-srart: 3;
+	grid-row-end: 1;
+}
+.placing_blocks{
+	display: grid;
+	grid-template-columns: 100px 100px;
+	grid-template-rows: 30px 30px;
+	top:40px;
+	right:44%;
+	position:absolute;
+}
+/*========================*/
+.scene_2 {
+	width: 100%;
+	height: 600px;
+	background: #62D0DF;
+}
+.bicycles{
+	width: 600px;
+	height: 100%;
+	right:0px;
+	position:absolute;
+}
+.block_location_2_2{
+	margin-top: 9%;
+	margin-left: 14%;
+	width: 600px;
+	height: 100%;
+	position:absolute;
+}
+/*========================*/
+.scene_3 {
+	padding-left: 0;
+	width: 100%;
+	height: 1100px;
+	background: #FFFFFF;
+}
+.placing_blocks_3{
+	padding-left: 0;
+	width: 100%;
+	display: grid;
+	margin-bottom: 0;
+	position:absolute;
+}
+.segment{
+	width: 100%;
+	height: 480px;
+}
+.segment_color_1{
+	background: #22356F;
+}
+.segment_color_2{
+	background: #0052C1;
+}
+.segment_color_3{
+	background: #76B58B;
+}
+.segment_text{
+	margin-top: 90px;
+	margin-left: 39%;
+	font-size: 30px;
+	color: #FFFFFF;
+}
+.block_text_3{
+	width: 740px;
+	height: 243px;
+	margin-top: 10%;
+	margin-left: 26%;
+}
+.block_location_3{
+	display: grid;
+	grid-row-srart: 3;
+	grid-row-end: 1;
+}
+
+/*========================*/
+.scene_4 {
+	width: 100%;
+	height: 840px;
+	background: #FFFFFF;
+}
+.bicycles_2{
+	width: 600px;
+	height: 100%;
+	left:0px;
+	position:absolute;
+	overflow: hidden;
+}.bicycles_2 img {
+  min-height: 200px;
+  min-width: 300px;
+  vertical-align: middle;
+}
+
+.block_of_text{
+	margin-top: 15%;
+	margin-left: 55%;
+	width: 30%;
+	height: 100px;
+	position:absolute;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Формы в React</title>
+</head>
+<body>
+    <div id="app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+    <script type="text/babel">
+    class UserForm extends React.Component {
+      constructor(props) {
+        super(props);
+        var name = props.name;
+        var nameIsValid = this.validateName(name);
+		var telephone = props.telephone;
+        var telephoneIsValid = this.validateTelephone(telephone);
+		var mail = props.mail;
+        var mailIsValid = this.validateMail(mail);
+		var age = props.age;
+        var ageIsValid = this.validateAge(age);
+        this.state = {name: name, telephone: telephone, mail: mail, age: age, nameValid: nameIsValid, telephoneValid: telephoneIsValid, mailValid: mailIsValid, ageValid: ageIsValid};
+   
+        this.onNameChange = this.onNameChange.bind(this);
+		this.onTelephoneChange = this.onTelephoneChange.bind(this);
+		this.onMailChange = this.onMailChange.bind(this);
+        this.onAgeChange = this.onAgeChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+        validateName(name){
+            return name.length>1;
+        }
+		validateTelephone(telephone){
+            return telephone.length>15;
+        }
+		validateMail(mail){
+            return mail.length>8;
+        }
+        validateAge(age){
+            return age>=0;
+        }
+		
+        onNameChange(e) {
+            var val = e.target.value;
+            console.log(val);
+            var valid = this.validateName(val);
+            this.setState({name: val, nameValid: valid});
+        }
+		onTelephoneChange(e) {
+            var val = e.target.value;
+            var valid = this.validateTelephone(val);
+            this.setState({telephone: val, telephoneValid: valid});
+        }
+		onMailChange(e) {
+            var val = e.target.value;
+            var valid = this.validateMail(val);
+            this.setState({mail: val, mailValid: valid});
+        }
+		onAgeChange(e) {
+            var val = e.target.value;
+            var valid = this.validateAge(val);
+            this.setState({age: val, ageValid: valid});
+        }
+   
+        handleSubmit(e) {
+            e.preventDefault();
+            if(this.state.nameValid ===true && this.state.telephoneValid===true && this.state.mailValid===true && this.state.ageValid===true){
+                alert(`Имя: ${this.state.name} телефон: ${this.state.telephone} почта: ${this.state.mail} Возраст: ${this.state.age}`);
+            }
+        }
+   
+        render() {
+            // цвет границы для поля для ввода имени
+            var nameColor = this.state.nameValid===true?"green":"red";
+			// цвет границы для поля для ввода возраста
+            var telephoneColor = this.state.telephoneValid===true?"green":"red";
+			// цвет границы для поля для ввода телефон
+            var mailColor = this.state.mailValid===true?"green":"red";
+            // цвет границы для поля для ввода почта
+            var ageColor = this.state.ageValid===true?"green":"red";
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <p>
+                        <label>Имя:</label><br />
+                        <input type="text" value={this.state.name} 
+                            onChange={this.onNameChange} style={{borderColor:nameColor}} />
+                    </p>
+					<p>
+                        <label>Телефон:</label><br />
+                        <input type="text" value={this.state.telephone} 
+                            onChange={this.onTelephoneChange}  style={{borderColor:telephoneColor}} />
+                    </p>
+					<p>
+                        <label>Почта:</label><br />
+                        <input type="text" value={this.state.mail} 
+                            onChange={this.onMailChange}  style={{borderColor:mailColor}} />
+                    </p>
+                    <p>
+                        <label>Возраст:</label><br />
+                        <input type="number" value={this.state.age} 
+                            onChange={this.onAgeChange}  style={{borderColor:ageColor}} />
+                    </p>
+                    <input type="submit" value="Отправить" />
+                </form>
+            );
+        }
+    }
+    ReactDOM.createRoot(
+        document.getElementById("app")
+    )
+    .render(
+        <UserForm name="" telephone="+7 (000) 000 00 00" mail="" age="0" />
+    );
+    </script>
+</body>
+</html>
