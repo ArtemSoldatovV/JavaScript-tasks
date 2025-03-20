@@ -1,13 +1,13 @@
-import Scene_1 from './scene_1/scene_1';
-import './scene_1/module.css';
-import Scene_2 from './scene_2/scene_2';
-import './scene_2/module.css';
-import Scene_3 from './scene_3/scene_3';
-import './scene_3/module.css';
-import Scene_4 from './scene_4/scene_4';
-import './scene_4/module.css';
-import Segment_text from './segment_text/segment_text';
-import './segment_text/module.css';
+import Scene_1 from './companies/scene_1/scene_1';
+import './companies/scene_1/module.css';
+import Scene_2 from './companies/scene_2/scene_2';
+import './companies/scene_2/module.css';
+import Scene_3 from './companies/scene_3/scene_3';
+import './companies/scene_3/module.css';
+import Scene_4 from './companies/scene_4/scene_4';
+import './companies/scene_4/module.css';
+import Segment_text from './companies/segment_text/segment_text';
+import './companies/segment_text/module.css';
 import './App.css';
 import React from 'react';
 
